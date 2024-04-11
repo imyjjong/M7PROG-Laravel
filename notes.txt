@@ -1,0 +1,67 @@
+dd = database dump
+CRUD
+protected $fillable = ['', '']; = permission to update multiple collums at the same time
+$tableName = Table::find(id);
+$tableName->update(
+    [
+        'one' => 'one',
+        'two' => 'two'
+    ]
+);
+$tableName->save();
+
+
+$tableName = Table::find(id);
+$tableName->first = 'one';
+$tableName->second = 'two';
+$tableName->save();
+
+
+$movies = Movie::all();
+        foreach($movies as $movie){
+            echo $movie . '<br>';
+        }
+
+
+$movie = Movie::create([
+    'title' => "movie",
+    etc.
+]);
+(save hoeft niet bij deze)
+
+DELETE
+$movie = Movie::find(id);
+$movie->delete();
+Movie::where('name', 'movieName')->delete();
+Movie::where('content', 'like', '%contentName$')->delete();
+
+MAKE NEW ARTICLES
+for($i = 1; $i <= 100; $i++){
+    Movie::create([
+        'title' => "movie name" . $i,
+        'intro' => "watch hoohodighshsdhgiouw",
+        'content' => "words words words",
+        'image' => "image.jpg",
+        'watched' => true
+    ]);
+}
+
+
+        // $movie = new Movie();
+        // $movie->title = "girl, interrupted";
+        // $movie->intro = "winona ryder, angelina jolie";
+        // $movie->image = "girlinterrupted.webp";
+        // $movie->year = 1999;
+        // $movie->description = "probably my favourite movie ever";
+        // $movie->save();
+
+$movie = Movie::create([
+            'title' => "pulp fiction",
+            'intro' => "john travolta, samuel l jackson, uma thurman",
+            'image' => "pulpfiction.webp",
+            'year' => 1994,
+            'description' => "really good movie"
+        ]);
+
+paginate(20)
+links()

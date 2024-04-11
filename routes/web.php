@@ -21,5 +21,6 @@ Route::middleware('auth')->group(function () {
 Route::get('/about', [ \App\Http\Controllers\AboutController::class, 'index'])->name('about.index');
 Route::get('/movies', [ \App\Http\Controllers\MoviesController::class, 'movies'])->name('movies.movies');
 Route::get('/info', [\App\Http\Controllers\InfoController::class, 'information'])->name('info.information');
+Route::get('/movies/add', [\App\Http\Controllers\AddController::class, 'add' ])->name('add.add');
 
 require __DIR__.'/auth.php';

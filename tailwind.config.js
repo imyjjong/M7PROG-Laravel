@@ -10,6 +10,14 @@ export default {
     ],
 
     theme: {
+        colors: {
+            background: '#191919',
+            color: '#D8D9DA',
+            accent: '#B784B7',
+            accentHover: '#9290C3',
+            headerBackground: '#151515',
+            headerColor: '#E7BCDE'
+        },
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
