@@ -8,7 +8,7 @@
 </head> 
 <body class="min-h-screen bg-red bg-background text-color flex flex-col justify-start align-center gap-8">
     @include('layouts.site')
-    <main class="flex flex-col justify-center align-center gap-12 px-80 py-12">
+    <main class="flex flex-col justify-center align-center gap-20 px-96 py-12">
     <section class="flex flex-col gap-8">
         <h2 class="text-color text-2xl font-medium border-b-2">FAVORITE FILMS</h2>
         <div class="flex justify-center align-center gap-8">
@@ -25,7 +25,8 @@
             @endforeach
         </div>
     </section>
+    @include('layouts.partials.watchlist')
 </main>
-    @include('layouts.moviesFooter')
+    @include('layouts.partials.moviesFooter')
 </body>
 </html>
