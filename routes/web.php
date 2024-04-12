@@ -7,9 +7,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('/dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -22,5 +19,15 @@ Route::get('/about', [ \App\Http\Controllers\AboutController::class, 'index'])->
 Route::get('/movies', [ \App\Http\Controllers\MoviesController::class, 'movies'])->name('movies.movies');
 Route::get('/info', [\App\Http\Controllers\InfoController::class, 'information'])->name('info.information');
 Route::get('/movies/add', [\App\Http\Controllers\AddController::class, 'add' ])->name('add.add');
+
+Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function(){
+    Route::get('/', function () {
+        return view('/dashboard');
+    })->name('dashboard');
+    
+    Route::resources([
+        'adminmovies'  =>  \App\Http\Controllers\AdminController::class,
+    ]);
+});
 
 require __DIR__.'/auth.php';

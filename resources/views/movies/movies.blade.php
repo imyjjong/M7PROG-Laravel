@@ -25,6 +25,9 @@
             @endforeach
         </div>
     </section>
+    <p class="text-color bg-accent hover:bg-accentHover p-2 w-max font-bold rounded-md">
+        <a href="{{ route('adminmovies.create') }}">add movie</a>
+    </p>
     @include('layouts.partials.watchlist')
 </main>
     @include('layouts.partials.moviesFooter')
