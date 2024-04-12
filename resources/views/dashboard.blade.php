@@ -6,16 +6,18 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head> 
-<body class="min-h-screen bg-red bg-background text-color flex flex-col justify-start align-center gap-8">@include('layouts.site')
+<body class="min-h-screen bg-background text-color flex flex-col justify-start align-center gap-8">
     @include('layouts.site')
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900 dark:text-gray-100">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div>
+    <main class="w-full px-60 py-4 flex flex-col justify-center items-center">
+        <section class="bg-lighten grid grid-rows-4">
+            @foreach($movies as $movie)
+            <article class="p-2 flex justify-start items-center gap-4">
+                <img class="w-14 object-contain" src="{{ $movie->image }}" alt="">
+                <h2 class="font-bold text-2xl">{{ $movie->title }}</h2>
+                <p class="text-accentHover">{{ $movie->year }}</p>
+            </article>
+            @endforeach
+        </section>
+    </main>
 </body>
 </html>

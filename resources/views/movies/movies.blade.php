@@ -6,7 +6,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head> 
-<body class="min-h-screen bg-red bg-background text-color flex flex-col justify-start align-center gap-8">
+<body class="min-h-screen bg-background text-color flex flex-col justify-start gap-8">
     @include('layouts.site')
     <main class="flex flex-col justify-center align-center gap-20 px-96 py-12">
     <section class="flex flex-col gap-8">
@@ -25,10 +25,8 @@
             @endforeach
         </div>
     </section>
-    <p class="text-color bg-accent hover:bg-accentHover p-2 w-max font-bold rounded-md">
-        <a href="{{ route('adminmovies.create') }}">add movie</a>
-    </p>
     @include('layouts.partials.watchlist')
+    @include('layouts.partials.watched')
 </main>
     @include('layouts.partials.moviesFooter')
 </body>

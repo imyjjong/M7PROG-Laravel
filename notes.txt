@@ -65,3 +65,9 @@ $movie = Movie::create([
 
 paginate(20)
 links()
+
+public function store(Request $request)
+    {
+        $title = $request->input('image');
+        dd($title);
+    }

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->year('year');
             $table->string('description');
+            $table->boolean('watched')->nulllable();
+            $table->boolean('like')->nullable();
             $table->timestamps();
         });
     }

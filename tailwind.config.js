@@ -16,7 +16,10 @@ export default {
             accent: '#B784B7',
             accentHover: '#9290C3',
             headerBackground: '#151515',
-            headerColor: '#E7BCDE'
+            headerColor: '#E7BCDE',
+            red: 'red',
+            flashyButton: '#074173',
+            lighten: '#202020'
         },
         extend: {
             fontFamily: {

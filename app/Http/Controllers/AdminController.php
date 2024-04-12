@@ -12,7 +12,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return 'grgiuwhoij';
+        $movies = Movie::all();
+        return view('dashboard', [
+            'movies' => $movies
+        ]);
     }
 
     /**
@@ -28,7 +31,29 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'title' => 'required|min:3',
+            'intro' => 'required',
+            'year' => 'required|digits:4',
+            'image' => 'required',
+            'description' => 'required',
+            'watched' => '',
+            'like' => '',
+        ]);
+
+        $data['watched'] = false;
+        if(isset($data['watched'])){
+            $data['watched'] = true;
+        }
+        $data['like'] = false;
+        if(isset($data['like'])){
+            $data['like'] = true;
+        }
+
+        $movie = new Movie($data);
+        $movie->save();
+        
+        return redirect()->route('adminmovies.index');
     }
 
     /**
