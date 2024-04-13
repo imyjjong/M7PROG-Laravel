@@ -28,7 +28,7 @@
             <p class="text-red">{{ $message }}</p>
             @enderror
             <label for="image" class="text-color font-medium text-xl">Image link</label>
-            <input class="border-0 border-accentHover bg-lighten border-b-2 w-80 h-9 rounded-sm focus:ring-0" type="text" name="image" value="{{ old('image') }}" placeholder="image link">
+            <input class="border-0 border-accentHover bg-lighten border-b-2 w-80 h-9 rounded-sm focus:ring-0" type="url" name="image" value="{{ old('image') }}" placeholder="insert image url">
             @error('image')
             <p class="text-red">{{ $message }}</p>
             @enderror
@@ -39,9 +39,9 @@
             @enderror
             <span class="flex justify-center items-center gap-4">
                 <label for="watched" class="text-color font-medium text-xs">watched</label>
-                <input class="border-2 border-accentHover bg-lighten w-8 h-8 rounded-sm focus:ring-0 checked:bg-accentHover" type="checkbox" name="watched" value="{{ old('watched') }}">
+                <input class="border-2 border-accentHover bg-lighten w-8 h-8 rounded-sm focus:ring-0 checked:bg-accentHover" type="checkbox" name="watched" value="">
                 <label for="like" class="text-color font-medium text-xs">like</label>
-                <input class="border-2 border-accentHover bg-lighten w-8 h-8 rounded-sm focus:ring-0 checked:bg-accentHover" type="checkbox" name="like" value="{{ old('like') }}">
+                <input class="border-2 border-accentHover bg-lighten w-8 h-8 rounded-sm focus:ring-0 checked:bg-accentHover" type="checkbox" name="like" value="fas fa-heart">
             </span>
             <input class="font-bold bg-accent px-4 py-2 mt-2 rounded-md hover:bg-accentHover hover:cursor-pointer" type="submit">
         </form>

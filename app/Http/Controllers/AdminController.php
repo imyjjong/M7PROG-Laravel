@@ -12,7 +12,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $movies = Movie::all();
+        $movies = Movie::paginate(5);
         return view('dashboard', [
             'movies' => $movies
         ]);
@@ -41,13 +41,13 @@ class AdminController extends Controller
             'like' => '',
         ]);
 
-        $data['watched'] = false;
+        $data['watched'] = 'fas fa-clock';
         if(isset($data['watched'])){
-            $data['watched'] = true;
+            $data['watched'] = 'fas fa-eye';
         }
-        $data['like'] = false;
+        $data['like'] = 'far fa-heart';
         if(isset($data['like'])){
-            $data['like'] = true;
+            $data['like'] = 'fas fa-heart';
         }
 
         $movie = new Movie($data);

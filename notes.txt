@@ -71,3 +71,6 @@ public function store(Request $request)
         $title = $request->input('image');
         dd($title);
     }
+
+liked and watched veranderen naar strings zodat ik classes kan toevoegen. also checken waarom het altijd standaard op gechecked staat.
+verder ook main cast toevoegen, and an image for the full page. and an actual description

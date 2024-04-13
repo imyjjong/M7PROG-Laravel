@@ -18,8 +18,9 @@ export default {
             headerBackground: '#151515',
             headerColor: '#E7BCDE',
             red: 'red',
-            flashyButton: '#074173',
-            lighten: '#202020'
+            flashyButton: '#0079FF',
+            lighten: '#202020',
+            border:  '#B6C4B6'
         },
         extend: {
             fontFamily: {

@@ -8,7 +8,7 @@
 </head> 
 <body class="min-h-screen bg-background text-color flex flex-col justify-start gap-8">
     @include('layouts.site')
-    <main class="flex flex-col justify-center align-center gap-20 px-96 py-12">
+    <main class="flex flex-col justify-center align-center gap-10 px-96 py-12">
     <section class="flex flex-col gap-8">
         <h2 class="text-color text-2xl font-medium border-b-2">FAVORITE FILMS</h2>
         <div class="flex justify-center align-center gap-8">
@@ -28,6 +28,5 @@
     @include('layouts.partials.watchlist')
     @include('layouts.partials.watched')
 </main>
-    @include('layouts.partials.moviesFooter')
 </body>
 </html>
