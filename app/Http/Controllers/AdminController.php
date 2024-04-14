@@ -67,10 +67,13 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Movie $movie)
-    {
-        //
-    }
+    
+     public function edit($id)
+     {
+         $movie = Movie::findOrFail($id); // Ophalen van de filmgegevens uit de database
+         return view('dashboard.adminmovies.edit', ['movie' => $movie]);
+     }
+     
 
     /**
      * Update the specified resource in storage.

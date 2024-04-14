@@ -22,7 +22,7 @@ Route::get('/info', [\App\Http\Controllers\InfoController::class, 'information']
 Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function(){
     Route::get('/', function () {
         return view('/dashboard');
-    })->name('dashboard');
+    })->name('dashboard.adminmovies');
     
     Route::resources([
         'adminmovies'  =>  \App\Http\Controllers\AdminController::class,

@@ -10,17 +10,8 @@
     @include('layouts.site')
     <main class="flex justify-center items-center w-full h-full">
     <section class="bg-lighten rounded-sm flex flex-col justify-center items-center gap-4 w-2/5 h-full py-6 px-10">
-            <h2 class="text-2xl font-bold">Add a movie</h2>
-        <form class="flex flex-col justify-center items-start gap-2" action="{{ route('adminmovies.store') }}" method="POST">
             @csrf
-            @include('dashboard.adminmovies.form', 
-                [
-                    'route'   =>route('adminmovies.store'), 
-                    'method'  =>'post', 
-                    'movie' =>new \App\Models\Movie()
-                ]
-            )
-        </form>
+            @include('dashboard.adminmovies.form', ['movie' => $movie])
     </section>
     </main>
 </body>

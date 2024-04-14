@@ -18,23 +18,24 @@
                 <li class="flex justify-center items-center">EDIT</li>
             </ul>
             @foreach($movies as $movie)
-            <article class="w-full grid grid-cols-[60%_10%_10%_10%_10%] px-4 py-2 border-b border-border">
-                <div class="p-2 flex justify-start items-center gap-4">
-                    <img class="w-14 object-contain" src="{{ $movie->image }}" alt="">
-                    <h2 class="font-bold text-2xl hover:text-flashyButton hover:cursor-pointer">{{ $movie->title }}</h2>
-                </div>
-                <div class="flex justify-center items-center">
-                    <p class="">{{ $movie->year }}</p>
-                </div>
-                <div class="flex justify-center items-center"><i class="{{ $movie->watched }} text-accent"></i></div>
-                <div class="flex justify-center items-center"><i class="{{ $movie->like }} text-accent"></i></div>
-                <div class="flex justify-center items-center">
-                    <a href="{{ route('adminmovies.edit', ['adminmovie' => $movie]) }}"><i class="fas fa-pen"></i></a>
-                </div>
-            </article>
+                <article class="w-full grid grid-cols-[60%_10%_10%_10%_10%] px-4 py-2 border-b border-border">
+                    <div class="p-2 flex justify-start items-center gap-4">
+                        <img class="w-14 object-contain" src="{{ $movie->image }}" alt="">
+                        <h2 class="font-bold text-2xl hover:text-flashyButton hover:cursor-pointer">{{ $movie->title }}</h2>
+                    </div>
+                    <div class="flex justify-center items-center">
+                        <p class="">{{ $movie->year }}</p>
+                    </div>
+                    <div class="flex justify-center items-center"><i class="{{ $movie->watched }} text-accent"></i></div>
+                    <div class="flex justify-center items-center"><i class="{{ $movie->like }} text-accent"></i></div>
+                    <div class="flex justify-center items-center">
+                        <a href="{{ route('adminmovies.edit', ['adminmovie' => $movie->id]) }}"><i class="fas fa-pen"></i></a>
+                    </div>
+                </article>
             @endforeach
             <span class="flex justify-center items-center p-4">{{ $movies->links() }}</span>
         </section>
     </main>
+    @include('layouts.partials.moviesFooter')
 </body>
 </html>

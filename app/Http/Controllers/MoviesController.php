@@ -9,8 +9,8 @@ class MoviesController extends Controller
 {
     public function movies(){
         $movies = Movie::whereIn('title', ['Girl, Interrupted', 'Pulp Fiction', 'Mr. & Mrs. Smith'])->get();
-        $watchlists = Movie::where('watched', 0)->get();
-        $watchedMovies = Movie::where('watched', 1)->get();
+        $watchlists = Movie::where('watched', 'fas fa-clock')->get();
+        $watchedMovies = Movie::where('watched', 'fas fa-eye')->get();
         return view('movies.movies', 
         [
             'movies' => $movies,

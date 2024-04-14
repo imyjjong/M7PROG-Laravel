@@ -28,5 +28,6 @@
     @include('layouts.partials.watchlist')
     @include('layouts.partials.watched')
 </main>
+@include('layouts.partials.moviesFooter')
 </body>
 </html>
