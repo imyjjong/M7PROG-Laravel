@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->text('intro');
-            $table->string('image')->nullable();
+            $table->string('image');
             $table->year('year');
             $table->string('description');
-            $table->boolean('watched')->nulllable();
-            $table->boolean('like')->nullable();
+            $table->string('watched')->nulllable();
+            $table->string('like')->nullable();
             $table->timestamps();
         });
     }

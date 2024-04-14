@@ -13,11 +13,7 @@
     @error('year')
     <p class="text-red">{{ $message }}</p>
     @enderror
-    <label for="image" class="text-color font-medium text-xl">Image link</label>
-    <input class="border-0 border-accentHover bg-lighten border-b-2 w-80 h-9 rounded-sm focus:ring-0" type="url" name="image" value="{{ old('image', $movie->image) }}" placeholder="insert image url">
-    @error('image')
-    <p class="text-red">{{ $message }}</p>
-    @enderror
+     <input type="hidden" name="image" value="{{ old('image', $movie->image) }}/">
     <label for="description" class="text-color font-medium text-xl">description</label>
     <input class="border-0 border-accentHover bg-lighten border-b-2 w-80 h-9 rounded-sm focus:ring-0" type="text" name="description" value="{{ old('description', $movie->description) }}" placeholder="description">
     @error('description')
@@ -25,7 +21,7 @@
     @enderror
     <span class="flex justify-center items-center gap-4">
         <label for="watched" class="text-color font-medium text-xs">watched</label>
-        <input class="border-2 border-accentHover bg-lighten w-8 h-8 rounded-sm focus:ring-0 checked:bg-accentHover" type="checkbox" name="watched" @if(old('watched', $movie->watched == 'fas fa-eye')) checked @endif>
+        <input class="border-2 border-accentHover bg-lighten w-8 h-8 rounded-sm focus:ring-0 checked:bg-accentHover" type="checkbox" name="watched" @if(old('watched', $movie->watched === 'fas fa-eye')) checked @endif>
         <label for="like" class="text-color font-medium text-xs">like</label>
-        <input class="border-2 border-accentHover bg-lighten w-8 h-8 rounded-sm focus:ring-0 checked:bg-accentHover" type="checkbox" name="like" @if(old('like', $movie->like == 'fas fa-heart')) checked @endif>
+        <input class="border-2 border-accentHover bg-lighten w-8 h-8 rounded-sm focus:ring-0 checked:bg-accentHover" type="checkbox" name="like" @if(old('like', $movie->like === 'fas fa-heart')) checked @endif>
     </span>

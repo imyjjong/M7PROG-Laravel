@@ -74,3 +74,10 @@ public function store(Request $request)
 
 liked and watched veranderen naar strings zodat ik classes kan toevoegen. also checken waarom het altijd standaard op gechecked staat.
 verder ook main cast toevoegen, and an image for the full page. and an actual description
+
+$data = $this->validateData($request);
+        $movie = new Movie($data);
+        $image = $request->file('image');
+        $path = $request->file('image')->store('/');
+        $movie->image = $path;
+        $movie->save();

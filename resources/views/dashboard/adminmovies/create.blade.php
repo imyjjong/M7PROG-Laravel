@@ -11,7 +11,7 @@
     <main class="flex justify-center items-center w-full h-full">
     <section class="bg-lighten rounded-sm flex flex-col justify-center items-center gap-4 w-2/5 h-full py-6 px-10">
         <h2 class="font-bold text-2xl border-b border-accentHover w-8/12 flex justify-center items-center pb-2">Add a movie</h2>
-        <form class="flex flex-col justify-center items-start gap-2" action="{{ route('adminmovies.store') }}" method="POST">
+        <form class="flex flex-col justify-center items-start gap-2" action="{{ route('adminmovies.store') }}" enctype="multipart/form-data" method="POST">
             @csrf
             @include('dashboard.adminmovies.form', 
                 [

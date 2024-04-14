@@ -4,12 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Movie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Http;
 
 class AdminController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $movies = Movie::paginate(5);
@@ -18,39 +16,34 @@ class AdminController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $movie = new Movie();
         return view('dashboard.adminmovies.create', $movie);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        $data = $this->validateData($request);
+        $validatedData = $this->validateData($request);
 
-        $movie = new Movie($data);
-        $movie->save();
-        
+        $movie = Movie::create($validatedData);
+
+        $title = urlencode($movie->title);
+
+        $response = Http::get('https://api.themoviedb.org/3/search/movie?query='.$title.'&api_key=13631cc9bf997aabaa47ab22c3ee1f67');
+        $imageURL = $response->json()['results'][0]['poster_path'];
+
+        $url = 'https://image.tmdb.org/t/p/original/'.$imageURL;
+
+        $movie->update(['image' => $url]);
+
         return redirect()->route('adminmovies.index');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Movie $movie)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     
      public function edit($id)
      {
@@ -59,9 +52,6 @@ class AdminController extends Controller
      }
      
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, $id)
     {
         $movie = Movie::findOrFail($id);
@@ -72,9 +62,6 @@ class AdminController extends Controller
         return redirect()->route('adminmovies.index');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy($id)
     {
         $movie = Movie::findOrFail($id);
@@ -93,16 +80,21 @@ class AdminController extends Controller
             'like' => '',
         ]);
 
-        $data['watched'] = 'fas fa-clock';
-        if(isset($data['watched'])){
+        if($request->has('watched')){
             $data['watched'] = 'fas fa-eye';
         }
-        $data['like'] = 'far fa-heart';
-        if(isset($data['like'])){
+        else{
+            $data['watched'] = 'fas fa-clock';
+        }
+
+        if($request->has('like')){
             $data['like'] = 'fas fa-heart';
+        }
+        else{
+            $data['like'] = 'far fa-heart';
         }
         
         return $data;
-
     }
+
 }

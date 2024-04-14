@@ -21,7 +21,7 @@
             @foreach($movies as $movie)
                 <article class="w-full grid grid-cols-[60%_10%_10%_5%_10%_5%] px-4 py-2 border-b border-border">
                     <div class="p-2 flex justify-start items-center gap-4">
-                        <img class="w-14 object-contain" src="{{ $movie->image }}" alt="">
+                        <img class="w-14 object-contain" src="{{ asset($movie->image) }}" alt="">
                         <h2 class="font-bold text-2xl hover:text-flashyButton hover:cursor-pointer">{{ $movie->title }}</h2>
                     </div>
                     <div class="flex justify-center items-center">
