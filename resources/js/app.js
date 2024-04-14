@@ -61,3 +61,15 @@ for(let i = 0; i < clock.length; i++){
         clock[i].classList.remove("fa-spin");
     })
 }
+
+const trash = document.getElementsByClassName("fa-trash-can");
+for(let i = 0; i < trash.length; i++){
+    trash[i].addEventListener('mouseenter', function(){
+        trash[i].classList.add("fa-shake");
+        trash[i].classList.add("text-trash");
+    })
+    trash[i].addEventListener('mouseleave', function(){
+        trash[i].classList.remove("fa-shake");
+        trash[i].classList.remove("text-trash");
+    })
+}

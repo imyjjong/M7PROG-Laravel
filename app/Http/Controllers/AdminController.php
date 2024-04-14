@@ -75,9 +75,11 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Movie $movie)
+    public function destroy($id)
     {
-        //
+        $movie = Movie::findOrFail($id);
+        $movie->delete();
+        return redirect()->route('adminmovies.index');
     }
 
     protected function validateData(Request $request){
