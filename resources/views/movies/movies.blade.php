@@ -17,9 +17,8 @@
                     <img src="{{ $movie->image }}" alt="" class="w-full h-full object-contain hover:cursor-pointer hover:brightness-[0.1]">
                     <div class="invisible group-hover/item:visible absolute bottom-0 left-0 flex flex-col justify-center align-center p-4"> 
                         <h2 class="text-accentHover text-2xl font-bold">{{ $movie->title }}</h2>
-                        <h2 class="text-color">{{ $movie->intro }}</h2>
+                        <h2 class="text-color text-xs font-bold">{{ $movie->mainCast }}</h2>
                         <h2 class="text-accentHover">{{ $movie->year }}</h2>
-                        <h2 class="text-color">{{ $movie->description }}</h2>
                     </div>
                 </article>
             @endforeach
