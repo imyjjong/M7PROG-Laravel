@@ -13,10 +13,12 @@
     @error('year')
     <p class="text-red">{{ $message }}</p>
     @enderror
-     <input type="hidden" name="image" value="{{ old('image', $movie->image) }}/">
-    <label for="description" class="text-color font-medium text-xl">description</label>
-    <input class="border-0 border-accentHover bg-lighten border-b-2 w-80 h-9 rounded-sm focus:ring-0" type="text" name="description" value="{{ old('description', $movie->description) }}" placeholder="description">
-    @error('description')
+     <input type="hidden" name="image" value="{{ $movie->image }}/">
+     <input type="hidden" name="description" value="{{ old('description', $movie->description) }}/">
+     <input type="hidden" name="backdrop" value="{{ old('backdrop', $movie->backdrop) }}/">
+    <label for="mainCast" class="text-color font-medium text-xl">Main cast</label>
+    <input class="border-0 border-accentHover bg-lighten border-b-2 w-80 h-9 rounded-sm focus:ring-0" type="text" name="mainCast" value="{{ old('mainCast', $movie->mainCast) }}" placeholder="main cast">
+    @error('mainCast')
     <p class="text-red">{{ $message }}</p>
     @enderror
     <span class="flex justify-center items-center gap-4">

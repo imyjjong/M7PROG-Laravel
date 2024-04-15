@@ -17,7 +17,9 @@ return new class extends Migration
             $table->text('intro');
             $table->string('image');
             $table->year('year');
-            $table->string('description');
+            $table->text('description');
+            $table->string('mainCast');
+            $table->string('backdrop');
             $table->string('watched')->nulllable();
             $table->string('like')->nullable();
             $table->timestamps();

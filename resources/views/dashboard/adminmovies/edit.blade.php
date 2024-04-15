@@ -19,6 +19,8 @@
         </form>
     </section>
     </main>
-    @include('layouts.partials.moviesFooter')
+    <div class="absolute bottom-0 w-full">
+        @include('layouts.partials.moviesFooter')
+    </div>
 </body>
 </html>
