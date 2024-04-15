@@ -35,7 +35,7 @@
                     <form class="flex justify-center items-center" action="{{ route('adminmovies.destroy', ['adminmovie' => $movie]) }}" method="POST">
                         @method('DELETE')
                         @csrf
-                        <button><i class="fas fa-trash-can"></i></button>
+                        <button class="hover:text-trash"><i class="fas fa-trash-can"></i></button>
                     </form>
                 </article>
             @endforeach
