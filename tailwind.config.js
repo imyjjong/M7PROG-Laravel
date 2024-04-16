@@ -21,7 +21,9 @@ export default {
             flashyButton: '#0079FF',
             lighten: '#202020',
             border:  '#B6C4B6',
-            trash: '#DD5746'
+            trash: '#DD5746',
+            cast: '#31363F',
+            castText: '#B6C4B6'
         },
         extend: {
             fontFamily: {

@@ -19,6 +19,7 @@ Route::get('/about', [ \App\Http\Controllers\AboutController::class, 'index'])->
 Route::get('/movies', [ \App\Http\Controllers\MoviesController::class, 'movies'])->name('movies.movies');
 Route::get('/info', [\App\Http\Controllers\InfoController::class, 'information'])->name('info.information');
 Route::get('/movie', [\App\Http\Controllers\MovieController::class, 'movie'])->name('movie.movie');
+Route::post('/actors', [\App\Http\Controllers\ActorController::class, 'actors'])->name('actors.actors');
 
 Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function(){
     Route::get('/', function () {

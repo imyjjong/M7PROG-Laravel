@@ -28,7 +28,7 @@ class AdminController extends Controller
 
         $movie = Movie::create($validatedData);
 
-        $title = urlencode($movie->title);
+        $title = urlencode($movie->title);  
 
         $response = Http::get('https://api.themoviedb.org/3/search/movie?query='.$title.'&api_key=13631cc9bf997aabaa47ab22c3ee1f67');
         $imageURL = $response->json()['results'][0]['poster_path'];
@@ -51,11 +51,11 @@ class AdminController extends Controller
         return view('dashboard.adminmovies.movie', ['movie' => $movie]);
     }
     
-     public function edit($id)
-     {
-         $movie = Movie::findOrFail($id);
-         return view('dashboard.adminmovies.edit', ['movie' => $movie]);
-     }
+    public function edit($id)
+    {
+        $movie = Movie::findOrFail($id);
+        return view('dashboard.adminmovies.edit', ['movie' => $movie]);
+    }
      
 
     public function update(Request $request, $id)
