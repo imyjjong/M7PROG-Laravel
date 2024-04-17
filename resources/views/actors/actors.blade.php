@@ -16,6 +16,7 @@
             </article>
             <div class="w-full flex flex-wrap justify-start items-center gap-4">
                 @foreach($movies as $movie)
+                    <a href="{{ route('adminmovies.show', ['adminmovie' => $movie]) }}" class="font-bold text-2xl hover:text-flashyButton hover:cursor-pointer">
                     <article class="group/item relative mb-4 w-32 h-auto">
                         <img src="{{ $movie->image }}" alt="" class="w-full h-full object-contain hover:cursor-pointer hover:brightness-[0.1]">
                         <div class="invisible group-hover/item:visible absolute bottom-0 left-0 flex flex-col justify-center align-center p-4"> 
@@ -23,6 +24,7 @@
                             <h2 class="text-color text-sm">{{ $movie->year }}</h2>
                         </div>
                     </article>
+                    </a>
                 @endforeach
             </div>
         </section>

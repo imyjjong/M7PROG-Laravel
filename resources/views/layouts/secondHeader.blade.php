@@ -1,4 +1,4 @@
-<header class="text-headerColor bg-headerBackground z-50 text-3xl relative flex justify-between align-center p-4 px-60">  
+<header class="text-headerColor z-50 text-3xl relative flex justify-between align-center p-4 px-60">  
     <a href="{{ url('/dashboard/adminmovies') }}">
         <h2 class="font-bold flex justify-center items-center gap-2"><i class="fas fa-film bounce"></i>movies</h2>
     </a>

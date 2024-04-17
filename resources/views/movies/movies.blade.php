@@ -14,12 +14,14 @@
         <div class="flex justify-center align-center gap-8">
             @foreach($movies as $movie)
                 <article class="group/item relative mb-4 w-1/3 h-auto">
+                <a href="{{ route('adminmovies.show', ['adminmovie' => $movie]) }}">
                     <img src="{{ $movie->image }}" alt="" class="w-full h-full object-contain hover:cursor-pointer hover:brightness-[0.1]">
                     <div class="invisible group-hover/item:visible absolute bottom-0 left-0 flex flex-col justify-center align-center p-4"> 
                         <h2 class="text-accentHover text-2xl font-bold">{{ $movie->title }}</h2>
                         <h2 class="text-color text-xs font-bold">{{ $movie->mainCast }}</h2>
                         <h2 class="text-accentHover">{{ $movie->year }}</h2>
                     </div>
+                </a>
                 </article>
             @endforeach
         </div>
