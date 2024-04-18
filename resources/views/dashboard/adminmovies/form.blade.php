@@ -8,11 +8,6 @@
     @error('intro')
     <p class="text-red">{{ $message }}</p>
     @enderror
-    <label for="year" class="text-color font-medium text-xl">Release year</label>
-    <input class="border-0 border-accentHover bg-lighten border-b-2 w-80 h-9 rounded-sm focus:ring-0" type="text" name="year" value="{{ old('year', $movie->year) }}" placeholder="year">
-    @error('year')
-    <p class="text-red">{{ $message }}</p>
-    @enderror
      <input type="hidden" name="image" value="{{ $movie->image }}/">
      <input type="hidden" name="description" value="{{ old('description', $movie->description) }}/">
      <input type="hidden" name="backdrop" value="{{ old('backdrop', $movie->backdrop) }}/">
@@ -21,6 +16,16 @@
     @error('mainCast')
     <p class="text-red">{{ $message }}</p>
     @enderror
+    <span class="flex justify-center items-center w-80 gap-2 pt-4">
+            <input class="border-0 border-accentHover bg-lighten border-b-2 w-3/6 h-9 rounded-sm focus:ring-0" type="text" name="year" value="{{ old('year', $movie->year) }}" placeholder="year">
+            @error('year')
+            <p class="text-red">{{ $message }}</p>
+            @enderror
+            <input class="border-0 border-accentHover bg-lighten border-b-2 w-3/6 h-9 rounded-sm focus:ring-0" type="text" name="genre" value="{{ old('genre', $movie->genre) }}" placeholder="genre">
+            @error('genre')
+            <p class="text-red">{{ $message }}</p>
+            @enderror
+    </span>
     <span class="flex justify-center items-center gap-4">
         <label for="watched" class="text-color font-medium text-xs">watched</label>
         <input class="border-2 border-accentHover bg-lighten w-8 h-8 rounded-sm focus:ring-0 checked:bg-accentHover" type="checkbox" name="watched" @if(old('watched', $movie->watched === 'fas fa-eye')) checked @endif>

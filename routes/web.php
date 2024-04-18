@@ -20,6 +20,7 @@ Route::get('/movies', [ \App\Http\Controllers\MoviesController::class, 'movies']
 Route::get('/info', [\App\Http\Controllers\InfoController::class, 'information'])->name('info.information');
 Route::get('/movie', [\App\Http\Controllers\MovieController::class, 'movie'])->name('movie.movie');
 Route::post('/actors', [\App\Http\Controllers\ActorController::class, 'actors'])->name('actors.actors');
+Route::post('/genres', [\App\Http\Controllers\GenresController::class, 'genres'])->name('genres.genres');
 
 Route::prefix('/dashboard')->middleware(['auth', 'verified'])->group(function(){
     Route::get('/', function () {

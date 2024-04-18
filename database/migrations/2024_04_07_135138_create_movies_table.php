@@ -19,6 +19,7 @@ return new class extends Migration
             $table->year('year');
             $table->text('description');
             $table->string('mainCast');
+            $table->string('genre');
             $table->string('backdrop');
             $table->string('watched')->nulllable();
             $table->string('like')->nullable();

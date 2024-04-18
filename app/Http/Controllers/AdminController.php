@@ -97,6 +97,7 @@ class AdminController extends Controller
             'image' => 'required',
             'description' => 'required',
             'mainCast' => 'required',
+            'genre' => 'required',
             'backdrop' => 'required',
             'watched' => '',
             'like' => '',
