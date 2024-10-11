@@ -1,1 +1,1 @@
-[Movie Discovery Site](https://movies.saramohammed.com/){:target="_blank"}
+https://movies.saramohammed.com/
